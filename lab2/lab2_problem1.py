@@ -61,6 +61,7 @@ class shifty:
       
       theta_goal = math.atan((final_y - self.current_position_y)/(final_x - self.current_position_x))
       theta_err = theta_goal - self.current_position_theta
+      theta_err = math.atan(math.sin(theta_err)/(math.cos(theta_err)))
       
       distance = math.sqrt((final_x - self.current_position_x)**2 + (final_y - self.current_position_y)**2)
       velocity = velocity_gain*distance
